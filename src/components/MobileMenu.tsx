@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 
-export default function MobileMenu() {
+interface MobileMenuProps {
+  /** Prefix for in-page anchors. Pass "/" from subpages so #services resolves to the homepage. */
+  home?: string;
+}
+
+export default function MobileMenu({ home = '' }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -35,10 +40,10 @@ export default function MobileMenu() {
   const closeMenu = () => setIsOpen(false);
 
   const links = [
-    { href: '#services', label: 'Services' },
-    { href: '#industries', label: 'Who We Serve' },
-    { href: '#methodology', label: 'How We Work' },
-    { href: '#contact', label: 'Contact' },
+    { href: `${home}#services`, label: 'Services' },
+    { href: `${home}#industries`, label: 'Who We Serve' },
+    { href: `${home}#methodology`, label: 'How We Work' },
+    { href: `${home}#contact`, label: 'Contact' },
   ];
 
   return (
@@ -93,7 +98,7 @@ export default function MobileMenu() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={`${home}#contact`}
             onClick={closeMenu}
             className="inline-block text-center mt-2 px-8 py-3.5 bg-[#1A1F2E] text-white rounded-lg font-semibold text-[0.95rem] border-2 border-[#1A1F2E] hover:bg-[#2A3040] hover:border-[#2A3040] no-underline transition-all duration-250"
           >

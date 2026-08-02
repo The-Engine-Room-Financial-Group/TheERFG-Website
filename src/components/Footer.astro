@@ -1,4 +1,10 @@
 ---
+interface Props {
+  /** Prefix for in-page anchors. Pass "/" from subpages so #services resolves to the homepage. */
+  home?: string;
+}
+
+const { home = '' } = Astro.props;
 ---
 
 <footer class="bg-[#141C2B] text-white pt-10 pb-8 px-6 -mt-px">
@@ -8,7 +14,7 @@
     >
       <!-- Brand - Text-based logo treatment -->
       <div>
-        <a href="#" class="inline-block mb-1">
+        <a href={home || '#'} class="inline-block mb-1">
           <span class="block text-2xl font-bold text-white font-serif">Engine Room</span>
           <span class="block text-xs font-bold uppercase tracking-[3px] text-accent">Financial Group</span>
         </a>
@@ -27,28 +33,28 @@
         <ul class="space-y-3">
           <li>
             <a
-              href="#services"
+              href={`${home}#services`}
               class="text-sm text-white/60 hover:text-accent transition-colors"
               >Accounts Payable</a
             >
           </li>
           <li>
             <a
-              href="#services"
+              href={`${home}#services`}
               class="text-sm text-white/60 hover:text-accent transition-colors"
               >Payroll</a
             >
           </li>
           <li>
             <a
-              href="#services"
+              href={`${home}#services`}
               class="text-sm text-white/60 hover:text-accent transition-colors"
               >Financial Reporting</a
             >
           </li>
           <li>
             <a
-              href="#services"
+              href={`${home}#services`}
               class="text-sm text-white/60 hover:text-accent transition-colors"
               >Cash Flow Support</a
             >
@@ -66,21 +72,21 @@
         <ul class="space-y-3">
           <li>
             <a
-              href="#industries"
+              href={`${home}#industries`}
               class="text-sm text-white/60 hover:text-accent transition-colors"
               >Who We Serve</a
             >
           </li>
           <li>
             <a
-              href="#methodology"
+              href={`${home}#methodology`}
               class="text-sm text-white/60 hover:text-accent transition-colors"
               >How We Work</a
             >
           </li>
           <li>
             <a
-              href="#contact"
+              href={`${home}#contact`}
               class="text-sm text-white/60 hover:text-accent transition-colors"
               >Contact</a
             >
@@ -115,7 +121,7 @@
           </li>
           <li class="pt-2">
             <a
-              href="#contact"
+              href={`${home}#contact`}
               class="inline-block px-6 py-2.5 bg-transparent text-[#B8943F] rounded-lg font-semibold text-[0.85rem] border-2 border-[#B8943F] hover:bg-[#B8943F] hover:text-white hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(184,148,63,0.35)] transition-all duration-250"
             >
               Get In Touch
@@ -132,6 +138,17 @@
         >&copy; {new Date().getFullYear()} The Engine Room Financial Group. All
         rights reserved.</span
       >
+      <nav class="flex items-center gap-5">
+        <a
+          href="/privacy"
+          class="text-white/50 hover:text-accent transition-colors">Privacy Policy</a
+        >
+        <a
+          href="/terms"
+          class="text-white/50 hover:text-accent transition-colors"
+          >Terms &amp; Conditions</a
+        >
+      </nav>
     </div>
   </div>
 </footer>
