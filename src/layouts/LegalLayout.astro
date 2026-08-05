@@ -87,10 +87,17 @@ const {
               >(516) 878-0015</a
             >
             &middot;
-            <a
+            <!--
+              email_off wrappers disable Cloudflare's Email Address Obfuscation,
+              which rewrites addresses into /cdn-cgi/l/email-protection and only
+              decodes them with JavaScript. Same reasoning as the [data-anim] note
+              above: the published contact must be readable in a non-JS fetch by
+              A2P 10DLC carrier tooling and by Plaid.
+            -->
+            <!--email_off--><a
               href={`mailto:${contactEmail}`}
               class="text-accent hover:underline">{contactEmail}</a
-            >
+            ><!--/email_off-->
           </p>
         </div>
       </div>
