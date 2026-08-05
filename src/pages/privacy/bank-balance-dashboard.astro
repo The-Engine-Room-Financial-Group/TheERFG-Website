@@ -1,0 +1,298 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+
+// ERFG-PRIV-004 v1.1. Ported verbatim from the controlled document attached to
+// Plaid's Security Diligence Questionnaire; wording is not re-authored here. The
+// v1.1 delta is publication location, the privacy contact address, and the
+// operating-address disclosure. See the Bank Balance Dashboard project's
+// _claude/policies/ for the source and revision history.
+const updated = 'August 4, 2026';
+---
+
+<LegalLayout
+  title="Privacy Policy — Bank Balance Dashboard | The Engine Room Financial Group"
+  description="ERFG-PRIV-004. What financial information the Bank Balance Dashboard collects through Plaid, why we collect it, who can see it, how long we keep it, and how a bank connection can be withdrawn."
+  eyebrow="Legal &middot; ERFG-PRIV-004"
+  heading="Privacy Policy — Bank Balance Dashboard"
+  intro="What financial information the Bank Balance Dashboard collects, why we collect it, who can see it, how long we keep it, and how a connection can be withdrawn. This policy applies to everyone who uses the system and to every bank account connected to it."
+  updated={updated}
+  addressLines={[
+    'Registered / mailing address: 456A Central Ave Suite 115, Cedarhurst, NY 11516',
+    'Operating address: 181 S Franklin Ave, Valley Stream, NY 11581',
+  ]}
+  contactEmail="privacy@TheERFG.com"
+>
+  <section>
+    <div class="legal-callout">
+      <p>
+        This policy governs the <strong>Bank Balance Dashboard</strong> and the
+        bank accounts connected to it through Plaid. It does not govern ERFG&rsquo;s
+        text message appointment reminder programs &mdash; those are covered by our
+        <a href="/privacy">general privacy policy</a>.
+      </p>
+    </div>
+    <dl>
+      <dt>Document</dt>
+      <dd>ERFG-PRIV-004 &mdash; Privacy Policy (Bank Balance Dashboard)</dd>
+      <dt>Version</dt>
+      <dd>1.1</dd>
+      <dt>Originally issued</dt>
+      <dd>4 August 2026 (v1.0)</dd>
+      <dt>Review cycle</dt>
+      <dd>Annual, or on material change</dd>
+      <dt>Published at</dt>
+      <dd>theerfg.com/privacy/bank-balance-dashboard</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">01</span>Who We Are and What This Covers</h2>
+    <p>
+      The Engine Room Financial Group (&ldquo;ERFG,&rdquo; &ldquo;we&rdquo;)
+      operates the <strong>Bank Balance Dashboard</strong> &mdash; a private,
+      internal reporting system that shows the current bank balances of ERFG and
+      of the entities ERFG manages, together with the recent transaction activity
+      behind each balance.
+    </p>
+    <p>
+      This policy covers the information handled by that system. The system is
+      <strong>not a public or consumer-facing product</strong>: there is no
+      sign-up, it is not offered to the public or to third parties, and access is
+      limited to a small number of named ERFG officers with a business need to see
+      the company&rsquo;s cash position.
+    </p>
+    <p>
+      Because the system is internal and has no external users, it is not offered
+      under public terms of service; access to it is governed by ERFG&rsquo;s
+      Access Control Policy (ERFG-ACP-002).
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">02</span>Information We Collect</h2>
+    <p>
+      We connect to bank accounts through <strong>Plaid Inc.</strong>, which acts
+      as our service provider for retrieving bank data. Through Plaid we receive,
+      for each connected account:
+    </p>
+    <dl>
+      <dt>Account identification</dt>
+      <dd>
+        Financial institution name, account name and type, and a masked account
+        number (last four digits)
+      </dd>
+      <dt>Balances</dt>
+      <dd>
+        Current (ledger) balance and available balance, and the time the figure
+        was retrieved
+      </dd>
+      <dt>Transactions</dt>
+      <dd>
+        Date, amount, direction, description or merchant name, and pending/posted
+        status
+      </dd>
+      <dt>Statements</dt>
+      <dd>
+        Where enabled, a copy of the institution&rsquo;s account statement, used
+        for independent tie-out
+      </dd>
+    </dl>
+    <p>
+      We also record ordinary application information about our own users: the
+      identity of the officer who signed in, and log entries showing when data was
+      retrieved and whether the job succeeded.
+    </p>
+
+    <div class="legal-callout">
+      <p>
+        <strong>What we never receive or store.</strong> We do <strong>not</strong
+        > receive or store bank login credentials. Authentication happens inside
+        Plaid Link, directly between the account holder and the financial
+        institution &mdash; those credentials are never visible to ERFG. We also do
+        not collect full account or routing numbers beyond the masked identifier
+        used to label an account, and we do not collect Social Security numbers or
+        other government identifiers through this system.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">03</span>Why We Collect It, and Consent</h2>
+    <p>
+      We use this information for one purpose: <strong
+        >to report cash position to authorized ERFG officers.</strong
+      > Specifically:
+    </p>
+    <ul>
+      <li>to calculate and display each account&rsquo;s current balance;</li>
+      <li>to show the recent transaction activity that supports a balance;</li>
+      <li>to send a daily balance brief to authorized officers;</li>
+      <li>
+        to tie balances out against bank-issued statements so that reported
+        figures are accurate;
+      </li>
+      <li>
+        to detect when a bank connection has gone stale, so a figure is never
+        presented as current when it is not.
+      </li>
+    </ul>
+    <p>
+      <strong
+        >Every connection is made with the account holder&rsquo;s
+        authorization.</strong
+      > A bank account is connected only by a person authorized to act for the account
+      holder, who reviews and accepts the disclosure presented in Plaid Link at the
+      time of connection &mdash; including Plaid&rsquo;s own end user privacy policy
+      &mdash; before any data is retrieved. ERFG additionally records the internal
+      written authorization for each entity&rsquo;s accounts before connecting them.
+      Consent covers the collection, processing and storage described in this policy,
+      and can be withdrawn as set out in Section 07.
+    </p>
+    <p>
+      We do <strong>not</strong> use this information for marketing, advertising,
+      profiling, credit decisioning, or automated decision-making, and we do
+      <strong>not sell it</strong> or share it for anyone else&rsquo;s commercial
+      purposes.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">04</span>Who Can See It</h2>
+    <ul>
+      <li>
+        <strong>Authorized ERFG officers only.</strong> Access is granted by named
+        individual on a need-to-know basis, requires single sign-on with
+        multi-factor authentication, and is reviewed quarterly. There is no public
+        route into the application.
+      </li>
+      <li>
+        <strong>Plaid Inc.</strong>, as our service provider for retrieving bank
+        data. Plaid&rsquo;s handling of end user information is governed by its
+        own end user privacy policy, available at
+        <a href="https://plaid.com/legal" rel="noopener">plaid.com/legal</a>.
+      </li>
+      <li>
+        <strong>Infrastructure providers</strong> that host the application, its
+        database, and our email &mdash; acting on our instructions, under
+        contract, and with no right to use the data for their own purposes.
+      </li>
+      <li>
+        <strong>Professional advisers, auditors or regulators</strong>, where
+        disclosure is required by law, by a valid legal process, or for a
+        legitimate audit of the entities concerned.
+      </li>
+    </ul>
+    <p>We do not disclose this information to anyone else.</p>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">05</span>How We Protect It</h2>
+    <ul>
+      <li>
+        All data is encrypted <strong>in transit</strong> using TLS 1.2 or better,
+        and <strong>at rest</strong> using AES-256.
+      </li>
+      <li>
+        API credentials and access tokens are held only in an encrypted secret
+        store, never in source code and never in logs.
+      </li>
+      <li>
+        Access requires multi-factor authentication; the application is private
+        with no anonymous access.
+      </li>
+      <li>
+        The system is <strong>read-only</strong>. It cannot move, initiate or
+        reconcile funds &mdash; there is no payment capability to misuse.
+      </li>
+      <li>
+        Full detail is in our Information Security Policy (ERFG-ISP-001) and
+        Access Control Policy (ERFG-ACP-002).
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">06</span>How Long We Keep It</h2>
+    <p>
+      We keep information only as long as it serves the purpose above. In summary:
+      balance snapshots and transaction records are kept on a
+      <strong>rolling 24-month</strong> window; access tokens and account metadata
+      are deleted within <strong>30 days</strong> of a connection being removed;
+      application logs are kept <strong>90 days</strong>. The complete schedule,
+      the disposal methods used, and our legal hold process are set out in our Data
+      Retention and Disposal Policy (ERFG-DRP-003), which is reviewed annually.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">07</span>Withdrawing a Connection, and Your Choices</h2>
+    <p>An account holder or managed entity may at any time:</p>
+    <ul>
+      <li>
+        <strong>Disconnect an account</strong> &mdash; we remove the connection at
+        Plaid, which immediately ends all further retrieval of that
+        account&rsquo;s data;
+      </li>
+      <li>
+        <strong>Request deletion</strong> of data already collected &mdash; we
+        delete it within 30 days, except any part we must keep for a specific
+        legal, regulatory or accounting obligation, which we will identify to you;
+      </li>
+      <li>
+        <strong>Ask what we hold</strong> &mdash; we will provide a description of
+        the categories held for the accounts concerned;
+      </li>
+      <li>
+        <strong>Ask us to correct</strong> anything inaccurate in the account
+        information we hold.
+      </li>
+    </ul>
+    <div class="legal-callout">
+      <p>
+        Send any of these requests to
+        <a href="mailto:privacy@TheERFG.com">privacy@TheERFG.com</a>. Requests are
+        received at that monitored address and handled by ERFG&rsquo;s Information
+        Security Owner. We acknowledge requests promptly and confirm completion in
+        writing.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">08</span>Children&rsquo;s Information</h2>
+    <p>
+      The system is an internal business tool for company bank accounts. It is not
+      directed to children and we do not knowingly collect information from anyone
+      under 18.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">09</span>Changes to This Policy</h2>
+    <p>
+      If we change this policy we update the version and effective date above and
+      publish the revised version at
+      <a href="/privacy/bank-balance-dashboard"
+        >theerfg.com/privacy/bank-balance-dashboard</a
+      >. Material changes affecting how connected account data is used will be
+      communicated to the account holders concerned.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="legal-num">10</span>Contact</h2>
+    <p>
+      <strong>The Engine Room Financial Group</strong><br />
+      Attn: Information Security Owner<br />
+      Registered / mailing address: 456A Central Ave Suite 115, Cedarhurst, NY
+      11516<br />
+      Operating address: 181 S Franklin Ave, Valley Stream, NY 11581<br />
+      <a href="mailto:privacy@TheERFG.com">privacy@TheERFG.com</a> &middot;
+      <a href="tel:5168780015">(516) 878-0015</a>
+    </p>
+    <p>
+      Questions about privacy, security or a deletion request should go to that
+      address.
+    </p>
+  </section>
+</LegalLayout>

@@ -15,9 +15,25 @@ interface Props {
   intro: string;
   /** Effective / last-updated date, displayed verbatim. */
   updated: string;
+  /**
+   * Address lines for the contact block at the foot of the page. Defaults to the
+   * Cedarhurst mailing address used by the SMS-program legal pages.
+   */
+  addressLines?: string[];
+  /** Contact address for the block at the foot of the page. */
+  contactEmail?: string;
 }
 
-const { title, description, heading, eyebrow, intro, updated } = Astro.props;
+const {
+  title,
+  description,
+  heading,
+  eyebrow,
+  intro,
+  updated,
+  addressLines = ['456A Central Ave Suite 115, Cedarhurst, NY 11516'],
+  contactEmail = 'getintouch@TheERFG.com',
+} = Astro.props;
 ---
 
 <Layout title={title} description={description}>
@@ -65,15 +81,15 @@ const { title, description, heading, eyebrow, intro, updated } = Astro.props;
           <p class="font-semibold text-navy mb-2">
             The Engine Room Financial Group
           </p>
-          <p>456A Central Ave Suite 115, Cedarhurst, NY 11516</p>
+          {addressLines.map((line) => <p>{line}</p>)}
           <p>
             <a href="tel:5168780015" class="text-accent hover:underline"
               >(516) 878-0015</a
             >
             &middot;
             <a
-              href="mailto:getintouch@TheERFG.com"
-              class="text-accent hover:underline">getintouch@TheERFG.com</a
+              href={`mailto:${contactEmail}`}
+              class="text-accent hover:underline">{contactEmail}</a
             >
           </p>
         </div>
